@@ -24,16 +24,16 @@
     <ul class="navbar-nav ml-auto">
        
         <li class="nav-item">
-        <a class="nav-link" href="#">Matériel</a>
+        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/materiel">Matériel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Notes</a>
+        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/note">Notes</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="#">Eleves</a>
+        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/listeEleve">Eleves</a>
       </li>
           <li class="nav-item active">
-        <a class="nav-link" href="#">Classes<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/ListeClasse">Classes<span class="sr-only">(current)</span></a>
       </li> 
      
 

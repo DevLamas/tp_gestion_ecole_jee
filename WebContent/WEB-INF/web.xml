@@ -20,6 +20,33 @@
   	<url-pattern>/ListeClasse</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+<servlet-name>listeEleve</servlet-name>
+<servlet-class>com.project.controlleur.listeEleve</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>listeEleve</servlet-name>
+  	<url-pattern>/listeEleve</url-pattern>
+  </servlet-mapping>
   
+      <servlet>
+<servlet-name>note</servlet-name>
+<servlet-class>com.project.controlleur.note</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>note</servlet-name>
+  	<url-pattern>/note</url-pattern>
+  </servlet-mapping>
   
+        <servlet>
+<servlet-name>materiel</servlet-name>
+<servlet-class>com.project.controlleur.materiel</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>materiel</servlet-name>
+  	<url-pattern>/materiel</url-pattern>
+  </servlet-mapping>
 </web-app>
