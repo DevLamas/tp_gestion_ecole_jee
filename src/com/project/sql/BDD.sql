@@ -4,30 +4,30 @@
 
 
 #------------------------------------------------------------
-# Table: Personne
-#------------------------------------------------------------
-
-CREATE TABLE Personne(
-        Id     Int  Auto_increment  NOT NULL ,
-        Nom    Varchar (60) NOT NULL ,
-        Prenom Varchar (60) NOT NULL ,
-        Email  Varchar (255) NOT NULL ,
-        mdp    Varchar (255) NOT NULL
-	,CONSTRAINT Personne_PK PRIMARY KEY (Id)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
 # Table: Status
 #------------------------------------------------------------
 
 CREATE TABLE Status(
-        Id          Int  Auto_increment  NOT NULL ,
-        Designation Varchar (60) NOT NULL ,
-        Id_Personne Int NOT NULL
-	,CONSTRAINT Status_PK PRIMARY KEY (Id)
+        Id_status   Int  Auto_increment  NOT NULL ,
+        Designation Varchar (60) NOT NULL
+	,CONSTRAINT Status_PK PRIMARY KEY (Id_status)
+)ENGINE=InnoDB;
 
-	,CONSTRAINT Status_Personne_FK FOREIGN KEY (Id_Personne) REFERENCES Personne(Id)
+
+#------------------------------------------------------------
+# Table: Personne
+#------------------------------------------------------------
+
+CREATE TABLE Personne(
+        Id_personne Int  Auto_increment  NOT NULL ,
+        Nom         Varchar (60) NOT NULL ,
+        Prenom      Varchar (60) NOT NULL ,
+        Email       Varchar (255) NOT NULL ,
+        mdp         Varchar (255) NOT NULL ,
+        Id_status   Int NOT NULL
+	,CONSTRAINT Personne_PK PRIMARY KEY (Id_personne)
+
+	,CONSTRAINT Personne_Status_FK FOREIGN KEY (Id_status) REFERENCES Status(Id_status)
 )ENGINE=InnoDB;
 
 
@@ -36,9 +36,9 @@ CREATE TABLE Status(
 #------------------------------------------------------------
 
 CREATE TABLE Classe(
-        Id          Int  Auto_increment  NOT NULL ,
+        Id_classe   Int  Auto_increment  NOT NULL ,
         Designation Varchar (5) NOT NULL
-	,CONSTRAINT Classe_PK PRIMARY KEY (Id)
+	,CONSTRAINT Classe_PK PRIMARY KEY (Id_classe)
 )ENGINE=InnoDB;
 
 
@@ -47,12 +47,12 @@ CREATE TABLE Classe(
 #------------------------------------------------------------
 
 CREATE TABLE Note(
-        Id            Int  Auto_increment  NOT NULL ,
+        Id_note       Int  Auto_increment  NOT NULL ,
         Note          Float NOT NULL ,
         Date_note     Date NOT NULL ,
         Designation   Varchar (60) NOT NULL ,
         Date_controle Date NOT NULL
-	,CONSTRAINT Note_PK PRIMARY KEY (Id)
+	,CONSTRAINT Note_PK PRIMARY KEY (Id_note)
 )ENGINE=InnoDB;
 
 
@@ -61,23 +61,23 @@ CREATE TABLE Note(
 #------------------------------------------------------------
 
 CREATE TABLE Presence(
-        Id            Int  Auto_increment  NOT NULL ,
+        Id_presence   Int  Auto_increment  NOT NULL ,
         Date_presence Date NOT NULL ,
         Present       Bool NOT NULL ,
         Designation   Varchar (60) NOT NULL
-	,CONSTRAINT Presence_PK PRIMARY KEY (Id)
+	,CONSTRAINT Presence_PK PRIMARY KEY (Id_presence)
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: Materiels
+# Table: Materiel
 #------------------------------------------------------------
 
-CREATE TABLE Materiels(
-        ID          Int  Auto_increment  NOT NULL ,
+CREATE TABLE Materiel(
+        Id_materiel Int  Auto_increment  NOT NULL ,
         Designation Varchar (255) NOT NULL ,
         Quantite    Int NOT NULL
-	,CONSTRAINT Materiels_PK PRIMARY KEY (ID)
+	,CONSTRAINT Materiel_PK PRIMARY KEY (Id_materiel)
 )ENGINE=InnoDB;
 
 
@@ -86,9 +86,9 @@ CREATE TABLE Materiels(
 #------------------------------------------------------------
 
 CREATE TABLE Cour(
-        Id      Int  Auto_increment  NOT NULL ,
+        Id_cour Int  Auto_increment  NOT NULL ,
         Matiere Varchar (60) NOT NULL
-	,CONSTRAINT Cour_PK PRIMARY KEY (Id)
+	,CONSTRAINT Cour_PK PRIMARY KEY (Id_cour)
 )ENGINE=InnoDB;
 
 
@@ -97,12 +97,12 @@ CREATE TABLE Cour(
 #------------------------------------------------------------
 
 CREATE TABLE Personne_Classe(
-        Id          Int NOT NULL ,
-        Id_Personne Int NOT NULL
-	,CONSTRAINT Personne_Classe_PK PRIMARY KEY (Id,Id_Personne)
+        Id_classe   Int NOT NULL ,
+        Id_personne Int NOT NULL
+	,CONSTRAINT Personne_Classe_PK PRIMARY KEY (Id_classe,Id_personne)
 
-	,CONSTRAINT Personne_Classe_Classe_FK FOREIGN KEY (Id) REFERENCES Classe(Id)
-	,CONSTRAINT Personne_Classe_Personne0_FK FOREIGN KEY (Id_Personne) REFERENCES Personne(Id)
+	,CONSTRAINT Personne_Classe_Classe_FK FOREIGN KEY (Id_classe) REFERENCES Classe(Id_classe)
+	,CONSTRAINT Personne_Classe_Personne0_FK FOREIGN KEY (Id_personne) REFERENCES Personne(Id_personne)
 )ENGINE=InnoDB;
 
 
@@ -111,14 +111,14 @@ CREATE TABLE Personne_Classe(
 #------------------------------------------------------------
 
 CREATE TABLE Personne_Presence(
-        Id          Int NOT NULL ,
-        Id_Presence Int NOT NULL ,
-        Id_Cour     Int NOT NULL
-	,CONSTRAINT Personne_Presence_PK PRIMARY KEY (Id,Id_Presence,Id_Cour)
+        Id_personne Int NOT NULL ,
+        Id_presence Int NOT NULL ,
+        Id_cour     Int NOT NULL
+	,CONSTRAINT Personne_Presence_PK PRIMARY KEY (Id_personne,Id_presence,Id_cour)
 
-	,CONSTRAINT Personne_Presence_Personne_FK FOREIGN KEY (Id) REFERENCES Personne(Id)
-	,CONSTRAINT Personne_Presence_Presence0_FK FOREIGN KEY (Id_Presence) REFERENCES Presence(Id)
-	,CONSTRAINT Personne_Presence_Cour1_FK FOREIGN KEY (Id_Cour) REFERENCES Cour(Id)
+	,CONSTRAINT Personne_Presence_Personne_FK FOREIGN KEY (Id_personne) REFERENCES Personne(Id_personne)
+	,CONSTRAINT Personne_Presence_Presence0_FK FOREIGN KEY (Id_presence) REFERENCES Presence(Id_presence)
+	,CONSTRAINT Personne_Presence_Cour1_FK FOREIGN KEY (Id_cour) REFERENCES Cour(Id_cour)
 )ENGINE=InnoDB;
 
 
@@ -127,14 +127,14 @@ CREATE TABLE Personne_Presence(
 #------------------------------------------------------------
 
 CREATE TABLE Personne_Note(
-        Id      Int NOT NULL ,
-        Id_Note Int NOT NULL ,
-        Id_Cour Int NOT NULL
-	,CONSTRAINT Personne_Note_PK PRIMARY KEY (Id,Id_Note,Id_Cour)
+        Id_personne Int NOT NULL ,
+        Id_note     Int NOT NULL ,
+        Id_cour     Int NOT NULL
+	,CONSTRAINT Personne_Note_PK PRIMARY KEY (Id_personne,Id_note,Id_cour)
 
-	,CONSTRAINT Personne_Note_Personne_FK FOREIGN KEY (Id) REFERENCES Personne(Id)
-	,CONSTRAINT Personne_Note_Note0_FK FOREIGN KEY (Id_Note) REFERENCES Note(Id)
-	,CONSTRAINT Personne_Note_Cour1_FK FOREIGN KEY (Id_Cour) REFERENCES Cour(Id)
+	,CONSTRAINT Personne_Note_Personne_FK FOREIGN KEY (Id_personne) REFERENCES Personne(Id_personne)
+	,CONSTRAINT Personne_Note_Note0_FK FOREIGN KEY (Id_note) REFERENCES Note(Id_note)
+	,CONSTRAINT Personne_Note_Cour1_FK FOREIGN KEY (Id_cour) REFERENCES Cour(Id_cour)
 )ENGINE=InnoDB;
 
 
@@ -143,16 +143,16 @@ CREATE TABLE Personne_Note(
 #------------------------------------------------------------
 
 CREATE TABLE Personne_Materiel(
-        ID             Int NOT NULL ,
-        Id_Personne    Int NOT NULL ,
+        Id_materiel    Int NOT NULL ,
+        Id_personne    Int NOT NULL ,
         Date_emprunt   Date NOT NULL ,
         Quantite_prise Int NOT NULL ,
         Date_rendu     Date NOT NULL ,
         Quantite_rendu Int NOT NULL ,
         Commentaire    Varchar (60) NOT NULL
-	,CONSTRAINT Personne_Materiel_PK PRIMARY KEY (ID,Id_Personne)
+	,CONSTRAINT Personne_Materiel_PK PRIMARY KEY (Id_materiel,Id_personne)
 
-	,CONSTRAINT Personne_Materiel_Materiels_FK FOREIGN KEY (ID) REFERENCES Materiels(ID)
-	,CONSTRAINT Personne_Materiel_Personne0_FK FOREIGN KEY (Id_Personne) REFERENCES Personne(Id)
+	,CONSTRAINT Personne_Materiel_Materiel_FK FOREIGN KEY (Id_materiel) REFERENCES Materiel(Id_materiel)
+	,CONSTRAINT Personne_Materiel_Personne0_FK FOREIGN KEY (Id_personne) REFERENCES Personne(Id_personne)
 )ENGINE=InnoDB;
 
