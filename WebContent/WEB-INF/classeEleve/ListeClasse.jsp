@@ -7,6 +7,6 @@
 <title>Liste classe</title>
 </head>
 <body class="bg-warning text-dark">
-<div class="bg-warning text-dark"></div>
+
 </body>
 </html>
