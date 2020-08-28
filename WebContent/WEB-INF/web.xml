@@ -17,14 +17,21 @@
 	<servlet-name>Login</servlet-name>
 	<url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-<servlet-name>ListeClasse</servlet-name>
-<servlet-class>com.project.controlleur.ListeClasse</servlet-class>
+	<servlet-name>Index</servlet-name>
+	<servlet-class>com.project.controlleur.Index</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>Index</servlet-name>
+	<url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <servlet>
+<servlet-name>classeEleve</servlet-name>
+<servlet-class>com.project.controlleur.classeEleve</servlet-class>
 </servlet>
 
   <servlet-mapping>
-  	<servlet-name>ListeClasse</servlet-name>
+  	<servlet-name>classeEleve</servlet-name>
   	<url-pattern>/ListeClasse</url-pattern>
   </servlet-mapping>
   
