@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.project.beans.Personne;
 import com.project.beans.Status;
@@ -39,6 +40,45 @@ public class PersonneRepository {
 		}
 	}
 	
+	
+	public ArrayList<Personne> getListEleves() {
+		ArrayList<Personne> personnes = new ArrayList();
+		try {
+			PreparedStatement statement = this.getBdd().prepareStatement("Select * from personne p INNER JOIN status s ON p.Id_status = s.Id_status where s.Id_status = 3");
+			ResultSet rs = statement.executeQuery();
+			while(rs.next()){
+				Personne personne = buildObjet(rs);
+				personnes.add(personne);
+			}
+    	} catch (SQLException ex) {
+        	System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+		return personnes;		
+	}
+	
+	
+	
+	public ArrayList<Personne> getListProfs() {
+		ArrayList<Personne> personnes = new ArrayList();
+		try {
+			PreparedStatement statement = this.getBdd().prepareStatement("Select * from personne p INNER JOIN status s ON p.Id_status = s.Id_status where s.Id_status = 2");
+			ResultSet rs = statement.executeQuery();
+			while(rs.next()){
+				Personne personne = buildObjet(rs);
+				personnes.add(personne);
+			}
+    	} catch (SQLException ex) {
+        	System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+		return personnes;		
+	}
+	
+	
+	
 	/*
 	 * Fonction ajout d'une personne
 	 * Parameter Personne personne
@@ -72,7 +112,7 @@ public class PersonneRepository {
 	 */
 	public boolean updateEleve(Personne personne) {
 		try {
-			PreparedStatement statement = this.getBdd().prepareStatement("update personne set nom = ?, prenom = ?, email = ?, password = ?, Id_status = ? where id = ?");
+			PreparedStatement statement = this.getBdd().prepareStatement("update personne set nom = ?, prenom = ?, email = ?, mdp = ?, Id_status = ? where id = ?");
 			statement.setString(1, personne.getNom());
 			statement.setString(2, personne.getPrenom());
 			statement.setString(3, personne.getEmail());
@@ -135,7 +175,7 @@ public class PersonneRepository {
 	
 	public Personne authentification(String email, String password) {
 		try {
-			PreparedStatement statement = this.getBdd().prepareStatement("Select * from personne p INNER JOIN status s ON p.Id_status = s.Id_status where email = ? AND password = ?");
+			PreparedStatement statement = this.getBdd().prepareStatement("Select * from personne p INNER JOIN status s ON p.Id_status = s.Id_status where email = ? AND mdp = ?");
 			statement.setString(1, email);
 			statement.setString(2, password);
 			ResultSet result = statement.executeQuery();
