@@ -86,7 +86,7 @@ public class PersonneRepository {
 	 */
 	public boolean addEleve(Personne personne) {
 		try {
-			PreparedStatement statement = this.getBdd().prepareStatement("insert into personne values(?,?,?,?,?,?,?)");
+			PreparedStatement statement = this.getBdd().prepareStatement("insert into personne values(?,?,?,?,?)");
 			statement.setInt(1,this.getNewId());
 			statement.setString(1, personne.getNom());
 			statement.setString(2, personne.getPrenom());

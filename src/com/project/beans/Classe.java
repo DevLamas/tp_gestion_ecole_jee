@@ -8,7 +8,7 @@ public class Classe {
 		return this.id;
 	}
 	
-	public String getNom() {
+	public String getDesignation() {
 		return this.designation;
 	}
 	
@@ -16,7 +16,7 @@ public class Classe {
 		this.id = id;
 	}
 	
-	public void setNom(String designation) {
+	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
 }
