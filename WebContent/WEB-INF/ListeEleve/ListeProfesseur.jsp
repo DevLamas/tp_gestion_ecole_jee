@@ -11,6 +11,7 @@
 <body class="bg-warning text-dark">
 <div class="row justify-content-center">
 <div class="card bg-light mb-12 text-center" >
+<button href="#" type="button" class="btn btn-info">Créer un professeur <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
  <table class="table table-hover">
   <thead>
     <tr>
@@ -42,7 +43,6 @@
 
   </tbody>
 </table>
-<button href="#" type="button" class="btn btn-info">Créer un professeur <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
 </div>
 </div>
 
