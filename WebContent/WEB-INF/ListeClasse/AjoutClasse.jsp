@@ -17,11 +17,11 @@
 <br/>
 <hr>
 
-<form>
+<form action="AjoutClasse" method="post">
   <div class="row justify-content-center">
     <div class="col">
-        <label for="NomClasse">Nom de la classe :</label>
-      <input id="NomClasse"  type="text" class="form-control" placeholder="Nom de la classe">
+        <label for="txtNomClasse">Nom de la classe :</label>
+      <input id="txtNomClasse" name="txtNomClasse" type="text" class="form-control" placeholder="Nom de la classe">
       <br/>
     </div>
   </div>
@@ -31,8 +31,15 @@
     
       <button onclick="window.location.href='ListeClasse'" type="button" class="btn btn-outline-warning">Annuler</button>
     
-  <button type="submit" class="btn btn-primary">Enregistrer</button>    </div></div>
+  <button type="submit" class="btn btn-primary">Enregistrer</button> 
+     </div></div>
+    
   </div>
+  <br/>
+   <%
+String  resultatPost = (String) request.getAttribute( "resultatPost" );
+%>
+<%= resultatPost %>
 </form>
 </div>
 </div>

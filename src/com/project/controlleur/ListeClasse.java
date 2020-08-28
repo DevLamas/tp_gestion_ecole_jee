@@ -30,9 +30,7 @@ public class ListeClasse extends HttpServlet {
 		
 		//try{
 		ClasseRepository ObjetClasseRepository = new ClasseRepository();
-		System.out.println( "point 1 ");
 		ArrayList<Classe> listeClasses = ObjetClasseRepository.getListClasses();
-		System.out.println( " test : "+listeClasses);
 
 		request.setAttribute( "listeClasses", listeClasses );
 	/*}
@@ -47,5 +45,7 @@ public class ListeClasse extends HttpServlet {
 				).forward( request, response );
 		
 			}
+	
+	
 	
 }

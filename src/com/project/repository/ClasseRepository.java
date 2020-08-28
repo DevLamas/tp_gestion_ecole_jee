@@ -15,14 +15,12 @@ public class ClasseRepository {
 	private Connection bdd;
 	
 	public Connection getBdd() {
-		System.out.println("point 9");
 
 		ConnexionBDD Cobdd = new ConnexionBDD();
 		
 		
 	 Cobdd.connection();   
 	 bdd=Cobdd.getBdd();
-		System.out.println("point 8");
 
 		return bdd;
 	}
@@ -46,20 +44,16 @@ public class ClasseRepository {
 	}
 	
 	public ArrayList<Classe> getListClasses() {
-		System.out.println("point 2:");
 		ArrayList<Classe> classes = new ArrayList();
-		System.out.println("point 3:");
 
 		try {
-			System.out.println("point 4");
 
 			PreparedStatement statement = this.getBdd().prepareStatement("Select * from classe");
 			
 			
-			System.out.println("point 5");
 
-			System.out.println("erreur:"+classes);
 			ResultSet rs = statement.executeQuery();
+			//rs.first();
 			while(rs.next()){
 				Classe classe = buildObjet(rs);
 				classes.add(classe);
@@ -77,10 +71,16 @@ public class ClasseRepository {
 	public boolean addClasse(Classe classe) {
 		try {
 			PreparedStatement statement = this.getBdd().prepareStatement("insert into classe values(?,?)");
-			statement.setInt(1,this.getNewId());
-			statement.setString(1, classe.getDesignation());
 			
+			
+
+			statement.setInt(1,this.getNewId());
+			System.out.println("test 2"+classe.getDesignation());
+			statement.setString(2, classe.getDesignation());
+			System.out.println("test 2");
+
 			if(statement.executeUpdate() < 1)
+				
 				return false;
 			
 		} catch (SQLException ex) {
@@ -126,19 +126,19 @@ public class ClasseRepository {
 	
 	protected Classe buildObjet(ResultSet result) throws SQLException {
 		Classe classe = new Classe();
-		while (result.next()) {
+		//while (result.next()) {
 			int id = result.getInt(1);
 			classe.setId(id);
 			String designation = result.getString(2);
 			classe.setDesignation(designation);
-		}
+		//}
 		return classe;
 	}
 	
 	public int getNewId() {
 		int newid = -1;
 		try {
-			PreparedStatement statement = this.getBdd().prepareStatement("SELECT max(id)+1 as newid from classe");
+			PreparedStatement statement = this.getBdd().prepareStatement("SELECT max(Id_classe)+1 as newid from classe");
 			ResultSet rs = statement.executeQuery();
 			if(rs.next()){
 				newid = rs.getInt("newid");

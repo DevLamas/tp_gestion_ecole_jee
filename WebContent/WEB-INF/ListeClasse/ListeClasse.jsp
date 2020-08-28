@@ -10,22 +10,11 @@
 <title>Liste classe</title>
 </head>
 <body class="bg-warning text-dark">
-<p> </p>
+ <br/>
 <div class="row justify-content-center">
 <div class="card bg-light mb-12 text-center" >
 <button  onclick="window.location.href='AjoutClasse'" type="button" class="btn btn-info">Créer une classe <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
-<%
-try{
-ArrayList<Classe> listeclasses = new ArrayList();
-listeclasses = (ArrayList<Classe>) request.getAttribute( "listeClasses" );
-for( Classe i : listeclasses ){
-out.println(i.getId() + " : ");
-}}
-catch(Exception e)
-{
-	System.out.println("erreur:"+e);
-}
-%>
+
  <table class="table table-hover">
   <thead>
     <tr>
@@ -39,24 +28,31 @@ catch(Exception e)
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>CP</td>
-      <td>23</td>
+  <%
+try{
+ArrayList<Classe> listeclasses = new ArrayList();
+listeclasses = (ArrayList<Classe>) request.getAttribute( "listeClasses" );
+for( Classe i : listeclasses ){
+	
+
+%>
+ <tr>
+      <th scope="row"><%= i.getId() %></th>
+      <td><%= i.getDesignation() %></td>
+      <td>x</td>
       <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/visible.png"/></button></td>
       <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/ios-glyphs/30/000000/quill-pen.png"/></td>
       <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png"/></button></td>
       
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>CM1</td>
-      <td>33</td>
-      <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/visible.png"/></button></td>
-            <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/ios-glyphs/30/000000/quill-pen.png"/></button></td>
-      <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png"/></button></td>
-      
-    </tr>
+<%
+}}
+catch(Exception e)
+{
+	System.out.println("erreur:"+e);
+}
+%>
+  
 
   </tbody>
 </table>
