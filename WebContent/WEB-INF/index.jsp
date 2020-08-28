@@ -10,9 +10,9 @@
 <body class="bg-warning text-dark">
 <div class="container h-100">
     <div class="row align-self-center mt-5">
-        <button href="#" type="button" class="btn btn-secondary mr-5">Liste des élèves</button>
+        <button onclick="window.location.href='ListeEleve'" type="button" class="btn btn-secondary mr-5">Liste des élèves</button>
         <button onclick="window.location.href='ListeProfesseur'" type="button" class="btn btn-secondary mr-5">Liste des professeurs</button>
-        <button href="#" type="button" class="btn btn-secondary mr-5">Liste des personnes</button>
+        <button onclick="window.location.href='ListePersonne'" type="button" class="btn btn-secondary mr-5">Liste des personnes</button>
 		<button href="#" type="button" class="btn btn-info">Créer une personne</button>
     </div>
 </div>

@@ -97,4 +97,14 @@
   	<servlet-name>ListeProfesseur</servlet-name>
   	<url-pattern>/ListeProfesseur</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+<servlet-name>ListePersonne</servlet-name>
+<servlet-class>com.project.controlleur.ListePersonne</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>ListePersonne</servlet-name>
+  	<url-pattern>/ListePersonne</url-pattern>
+  </servlet-mapping>
 </web-app>
