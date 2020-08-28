@@ -4,6 +4,9 @@
 <html>
 <head>
 <%@ include file="../navbar.jsp" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.project.beans.Classe" %>
+<%@ page import="com.project.repository.ClasseRepository" %>
 <title>Liste classe</title>
 </head>
 <body class="bg-warning text-dark">
@@ -11,7 +14,18 @@
 <div class="row justify-content-center">
 <div class="card bg-light mb-12 text-center" >
 <button  onclick="window.location.href='AjoutClasse'" type="button" class="btn btn-info">Créer une classe <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
-
+<%
+try{
+ArrayList<Classe> listeclasses = new ArrayList();
+listeclasses = (ArrayList<Classe>) request.getAttribute( "listeClasses" );
+for( Classe i : listeclasses ){
+out.println(i.getId() + " : ");
+}}
+catch(Exception e)
+{
+	System.out.println("erreur:"+e);
+}
+%>
  <table class="table table-hover">
   <thead>
     <tr>
