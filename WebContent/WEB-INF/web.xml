@@ -25,6 +25,8 @@
 	<servlet-name>Index</servlet-name>
 	<url-pattern>/index</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet>
 <servlet-name>ListeClasse</servlet-name>
 <servlet-class>com.project.controlleur.ListeClasse</servlet-class>
@@ -34,6 +36,19 @@
   	<servlet-name>ListeClasse</servlet-name>
   	<url-pattern>/ListeClasse</url-pattern>
   </servlet-mapping>
+  
+    
+  <servlet>
+<servlet-name>AjoutClasse</servlet-name>
+<servlet-class>com.project.controlleur.AjoutClasse</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>AjoutClasse</servlet-name>
+  	<url-pattern>/AjoutClasse</url-pattern>
+  </servlet-mapping>
+  
+  
   
     <servlet>
 <servlet-name>ListeEleve</servlet-name>

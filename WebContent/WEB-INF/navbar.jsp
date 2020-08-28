@@ -38,7 +38,7 @@
      
 
     </ul>
-      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Déconnexion</button>
+      <button onclick="window.location.href='login'" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Déconnexion</button>
   
 </div></nav>
 </body>
