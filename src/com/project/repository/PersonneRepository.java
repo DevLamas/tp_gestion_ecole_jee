@@ -131,6 +131,27 @@ public class PersonneRepository {
 		return newid;
 	}
 	
+	
+	
+	public Personne authentification(String email, String password) {
+		try {
+			PreparedStatement statement = this.getBdd().prepareStatement("Select * from personne p INNER JOIN status s ON p.Id_status = s.Id_status where email = ? AND password = ?");
+			statement.setString(1, email);
+			statement.setString(2, password);
+			ResultSet result = statement.executeQuery();
+			Personne personne = buildObjet(result);
+			return personne;
+			
+		}catch(Exception e) {
+			System.out.println("");
+			e.printStackTrace();
+			Personne personne = new Personne();
+            return personne;
+		}
+	}
+	
+	
+	
 	/*
 	 * Fonction permettant la création des objets Personnes
 	 * Parameter ResultSet result
