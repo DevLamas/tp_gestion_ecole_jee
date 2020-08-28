@@ -30,10 +30,10 @@
         <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/note">Notes</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/listeEleve">Eleves</a>
+        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/ListeEleve">Eleves</a>
       </li>
-          <li class="nav-item active">
-        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/ListeClasse">Classes<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/ListeClasse">Classes</a>
       </li> 
      
 

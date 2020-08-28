@@ -29,13 +29,13 @@
   </servlet-mapping>
   
     <servlet>
-<servlet-name>listeEleve</servlet-name>
+<servlet-name>ListeEleve</servlet-name>
 <servlet-class>com.project.controlleur.listeEleve</servlet-class>
 </servlet>
 
   <servlet-mapping>
-  	<servlet-name>listeEleve</servlet-name>
-  	<url-pattern>/listeEleve</url-pattern>
+  	<servlet-name>ListeEleve</servlet-name>
+  	<url-pattern>/ListeEleve</url-pattern>
   </servlet-mapping>
   
       <servlet>

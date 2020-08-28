@@ -25,7 +25,7 @@ public class listeEleve extends HttpServlet {
 		
 		
 		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/listeEleve/listeEleve.jsp"
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/ListeEleve/ListeEleve.jsp"
 				).forward( request, response );
 		
 			}
