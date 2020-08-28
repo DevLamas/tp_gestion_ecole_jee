@@ -21,11 +21,7 @@ public class listeEleve extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response )
 			throws ServletException, IOException{
 		
-		
-		
-		
-		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/ListeEleve/ListeEleve.jsp"
+    this.getServletContext().getRequestDispatcher( "/WEB-INF/ListeEleve/ListeEleve.jsp"
 				).forward( request, response );
 		
 			}
