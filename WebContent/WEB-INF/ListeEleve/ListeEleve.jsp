@@ -1,3 +1,5 @@
+<%@page import="com.project.beans.Personne"%>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,6 +25,12 @@
     </tr>
   </thead>
   <tbody>
+  <%
+  List<Personne> liste = (List<Personne>) request.getAttribute( "eleve" );
+  for( Personne p : liste ){
+  	out.println(p + " : ");
+  };
+  %>
     <tr>
       <th scope="row">1</th>
       <td>Dupont</td>
