@@ -26,12 +26,12 @@
 	<url-pattern>/index</url-pattern>
   </servlet-mapping>
   <servlet>
-<servlet-name>classeEleve</servlet-name>
-<servlet-class>com.project.controlleur.classeEleve</servlet-class>
+<servlet-name>ListeClasse</servlet-name>
+<servlet-class>com.project.controlleur.ListeClasse</servlet-class>
 </servlet>
 
   <servlet-mapping>
-  	<servlet-name>classeEleve</servlet-name>
+  	<servlet-name>ListeClasse</servlet-name>
   	<url-pattern>/ListeClasse</url-pattern>
   </servlet-mapping>
   

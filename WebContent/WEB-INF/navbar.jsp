@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light  bg-light">
 
-  <a class="navbar-brand" href="#">Acceuil</a>
+  <a class="navbar-brand" href="index">Acceuil</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,16 +24,16 @@
     <ul class="navbar-nav ml-auto">
        
         <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/materiel">Matériel</a>
+        <a class="nav-link" href="materiel">Matériel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/note">Notes</a>
+        <a class="nav-link" href="note">Notes</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/ListeEleve">Eleves</a>
+        <a class="nav-link" href="ListeEleve">Eleves</a>
       </li>
           <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/tp_gestion_ecole_jee/ListeClasse">Classes</a>
+        <a class="nav-link" href="ListeClasse">Classes</a>
       </li> 
      
 
