@@ -1,6 +1,7 @@
 package com.project.controlleur;
 
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,8 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class classeEleve extends HttpServlet {
-
+public class ListeClasse extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response )
 			throws ServletException, IOException{
 		
@@ -26,10 +26,9 @@ public class classeEleve extends HttpServlet {
 		
 		
 		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/classeEleve/ListeClasse.jsp"
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/ListeClasse/ListeClasse.jsp"
 				).forward( request, response );
 		
 			}
-	
 	
 }
