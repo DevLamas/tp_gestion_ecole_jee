@@ -9,14 +9,23 @@ import java.util.ArrayList;
 import com.project.beans.Classe;
 import com.project.beans.Personne;
 import com.project.beans.Status;
+import com.project.beans.ConnexionBDD;
 
 public class ClasseRepository {
 	private Connection bdd;
 	
 	public Connection getBdd() {
+		System.out.println("point 9");
+
+		ConnexionBDD Cobdd = new ConnexionBDD();
+		
+		
+	 Cobdd.connection();   
+	 bdd=Cobdd.getBdd();
+		System.out.println("point 8");
+
 		return bdd;
 	}
-	
 	
 	
 	public Classe find(int id) {
@@ -36,10 +45,20 @@ public class ClasseRepository {
 		}
 	}
 	
-	public ArrayList<Classe> getListEleves() {
+	public ArrayList<Classe> getListClasses() {
+		System.out.println("point 2:");
 		ArrayList<Classe> classes = new ArrayList();
+		System.out.println("point 3:");
+
 		try {
+			System.out.println("point 4");
+
 			PreparedStatement statement = this.getBdd().prepareStatement("Select * from classe");
+			
+			
+			System.out.println("point 5");
+
+			System.out.println("erreur:"+classes);
 			ResultSet rs = statement.executeQuery();
 			while(rs.next()){
 				Classe classe = buildObjet(rs);
@@ -50,11 +69,12 @@ public class ClasseRepository {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         }
+
 		return classes;		
 	}
 	
 	
-	public boolean addEleve(Classe classe) {
+	public boolean addClasse(Classe classe) {
 		try {
 			PreparedStatement statement = this.getBdd().prepareStatement("insert into classe values(?,?)");
 			statement.setInt(1,this.getNewId());
@@ -71,7 +91,7 @@ public class ClasseRepository {
 		return true;
 	}
 	
-	public boolean updateEleve(Classe classe) {
+	public boolean updateClasse(Classe classe) {
 		try {
 			PreparedStatement statement = this.getBdd().prepareStatement("update personne set designation = ? where id = ?");
 			statement.setString(1, classe.getDesignation());
@@ -89,7 +109,7 @@ public class ClasseRepository {
 	}
 	
 	
-	public boolean deleteEleve(int classeId) {
+	public boolean deleteClasse(int classeId) {
 		try {
 			PreparedStatement statement = this.getBdd().prepareStatement("delete from classe where id = ?");
 			statement.setInt(1, classeId);
