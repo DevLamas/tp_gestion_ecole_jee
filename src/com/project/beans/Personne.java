@@ -6,6 +6,7 @@ public class Personne {
 	private String prenom;
 	private String email;
 	private String password;
+	private Status status;
 	
 	public int getId() {
 		return this.id;
@@ -45,5 +46,13 @@ public class Personne {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 }

@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.Properties;
 
 public class ConnexionBDD {
-private Connection bdd;
+	private Connection bdd;
 	
 	public Connection getBdd() {
 		return bdd;
