@@ -28,20 +28,7 @@ public class ListeClasse extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response )
 			throws ServletException, IOException{
 		
-		try{
-		ClasseRepository ObjetClasseRepository = new ClasseRepository();
-		System.out.println( "point 1 ");
-		ArrayList<Classe> listeClasses = ObjetClasseRepository.getListClasses();
-		System.out.println( " test : "+listeClasses);
-
-		request.setAttribute( "listeClasses", listeClasses );
-	}
-	catch(Exception e)
-	{
-		System.out.println("erreur:"+e);
-	}
-		
-		
+	
 		
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/ListeClasse/ListeClasse.jsp"
 				).forward( request, response );

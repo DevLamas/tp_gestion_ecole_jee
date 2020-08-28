@@ -107,4 +107,32 @@
   	<servlet-name>ListePersonne</servlet-name>
   	<url-pattern>/ListePersonne</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+<servlet-name>ListeStatus</servlet-name>
+<servlet-class>com.project.controlleur.ListeStatus</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>ListeStatus</servlet-name>
+  	<url-pattern>/ListeStatus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+<servlet-name>AjoutPersonne</servlet-name>
+<servlet-class>com.project.controlleur.AjoutPersonne</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>AjoutPersonne</servlet-name>
+  	<url-pattern>/AjoutPersonne</url-pattern>
+  </servlet-mapping>
+    <servlet>
+<servlet-name>AjoutStatus</servlet-name>
+<servlet-class>com.project.controlleur.AjoutStatus</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+  	<servlet-name>AjoutStatus</servlet-name>
+  	<url-pattern>/AjoutStatus</url-pattern>
+  </servlet-mapping>
 </web-app>

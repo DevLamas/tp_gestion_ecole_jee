@@ -23,9 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 public class listeEleve extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response )
 			throws ServletException, IOException{
-		PersonneRepository personneR = new PersonneRepository();
-		List<Personne> eleve = personneR.getListEleves();
-		request.setAttribute("eleve", eleve);
+
     this.getServletContext().getRequestDispatcher( "/WEB-INF/ListeEleve/ListeEleve.jsp"
 				).forward( request, response );
 		

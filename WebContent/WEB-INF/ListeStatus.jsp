@@ -3,22 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../navbar.jsp" %>
-
-<meta charset="UTF-8">
-<title>Liste professeur</title>
+<%@ include file="../WEB-INF/navbar.jsp" %>
+<title>Liste status</title>
 </head>
 <body class="bg-warning text-dark">
+<p> </p>
 <div class="row justify-content-center">
 <div class="card bg-light mb-12 text-center" >
-<button onclick="window.location.href='AjoutPersonne'" type="button" class="btn btn-info">Créer un professeur <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
+<button  onclick="window.location.href='AjoutStatus'" type="button" class="btn btn-info">Créer une status <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
  <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Prénom</th>
-      <th scope="col">Consulter</th> 
+      <th scope="col">Désignation</th>
+      <th scope="col">Consulter</th>      
       <th scope="col">Modifier</th>
       <th scope="col">Supprimer</th>
       
@@ -27,19 +25,17 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>prof1</td>
-      <td>prof1</td>
+      <td>Elève</td>
       <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/visible.png"/></button></td>
-      <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/visible.png"/></button></td>
+      <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/ios-glyphs/30/000000/quill-pen.png"/></td>
       <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png"/></button></td>
       
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>prof2</td>
-      <td>prof2</td>
+      <td>Professeur</td>
       <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/visible.png"/></button></td>
-      <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/visible.png"/></button></td>
+            <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/ios-glyphs/30/000000/quill-pen.png"/></button></td>
       <td><button class="btn btn-outline-dark" type="submit"><img src="https://img.icons8.com/material-sharp/24/000000/delete-forever.png"/></button></td>
       
     </tr>

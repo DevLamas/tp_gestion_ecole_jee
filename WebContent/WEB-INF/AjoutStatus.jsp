@@ -3,16 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../navbar.jsp" %>
+<%@ include file="../WEB-INF/navbar.jsp" %>
 
 <meta charset="ISO-8859-1">
-<title>Ajout Classe</title>
+<title>Ajout Status</title>
 </head>
 <body class="bg-warning text-dark">
 <br/>
 <div class="row justify-content-center">
 <div class="card bg-light mb-12  px-md-5 py-md-5" >
-<div><h2>Ajout Classe</h2>
+<div><h2>Ajout Status</h2>
 </div>
 <br/>
 <hr>
@@ -20,8 +20,8 @@
 <form>
   <div class="row justify-content-center">
     <div class="col">
-        <label for="NomClasse">Nom de la classe :</label>
-      <input id="NomClasse"  type="text" class="form-control" placeholder="Nom de la classe">
+        <label for="NomStatus">Nom du status :</label>
+      <input id="NomStatus"  type="text" class="form-control" placeholder="Nom du status">
       <br/>
     </div>
   </div>

@@ -10,7 +10,7 @@
 <p> </p>
 <div class="row justify-content-center">
 <div class="card bg-light mb-12 text-center" >
-<button  onclick="window.location.href='AjoutClasse'" type="button" class="btn btn-info">Créer une personne <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
+<button  onclick="window.location.href='AjoutPersonne'" type="button" class="btn btn-info">Créer une personne <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
 
  <table class="table table-hover">
   <thead>

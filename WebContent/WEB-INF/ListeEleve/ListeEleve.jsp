@@ -13,7 +13,7 @@
 <body class="bg-warning text-dark">
 <div class="row justify-content-center">
 <div class="card bg-light mb-12 text-center" >
-<button href="#" type="button" class="btn btn-info">Créer un élève <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
+<button onclick="window.location.href='AjoutPersonne'" type="button" class="btn btn-info">Créer un élève <img src="https://img.icons8.com/fluent-systems-filled/24/000000/plus.png"/></button>
  <table class="table table-hover">
   <thead>
     <tr>
@@ -26,12 +26,6 @@
     </tr>
   </thead>
   <tbody>
-  <%
-  List<Personne> liste = (List<Personne>) request.getAttribute( "eleve" );
-  for( Personne p : liste ){
-  	out.println(p + " : ");
-  };
-  %>
     <tr>
       <th scope="row">1</th>
       <td>Dupont</td>

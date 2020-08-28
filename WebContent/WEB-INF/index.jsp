@@ -13,19 +13,19 @@
         <button onclick="window.location.href='ListeEleve'" type="button" class="btn btn-secondary mr-5">Liste des élèves</button>
         <button onclick="window.location.href='ListeProfesseur'" type="button" class="btn btn-secondary mr-5">Liste des professeurs</button>
         <button onclick="window.location.href='ListePersonne'" type="button" class="btn btn-secondary mr-5">Liste des personnes</button>
-		<button href="#" type="button" class="btn btn-info">Créer une personne</button>
+		<button onclick="window.location.href='AjoutPersonne'" type="button" class="btn btn-info">Créer une personne</button>
     </div>
 </div>
 <div class="container h-150">
     <div class="row align-self-center mt-5">
-        <button href="#" type="button" class="btn btn-secondary mr-5">Liste des status</button>
-		<button href="#" type="button" class="btn btn-info">Créer un status</button>
+        <button onclick="window.location.href='ListeStatus'" type="button" class="btn btn-secondary mr-5">Liste des status</button>
+		<button onclick="window.location.href='AjoutStatus'" type="button" class="btn btn-info">Créer un status</button>
     </div>
 </div>
 <div class="container h-200">
     <div class="row align-self-center mt-5">
         <button onclick="window.location.href='ListeClasse'" type="button" class="btn btn-secondary mr-5">Liste des classe</button>
-		<button href="#" type="button" class="btn btn-info">Créer une classe</button>
+		<button onclick="window.location.href='AjoutClasse'" type="button" class="btn btn-info">Créer une classe</button>
     </div>
 </div>
 <div class="container h-250">
